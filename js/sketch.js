@@ -35,8 +35,8 @@ var initContainers = () => {
  *
  * @param container fill the given parameter with a grid.
  */
-var fillContainerWithGrid = (container) =>{
-    container.style.cssText += generateGrid(['1fr', '1fr', '1fr'], [ '1fr', '1fr', '1fr'],[0,0])
+var fillContainerWithGrid = (container, rows, cols) =>{
+    container.style.cssText += generateGrid(rows, cols,[0,0]);
 }
 
 init();
