@@ -4,7 +4,8 @@ import {init, modifyContainer, addElement, generateGrid} from "./tools.js";
 
 var initHeader = () => {
     document.querySelector('h1'+'').style.textAlign = 'center';
-    document.querySelector('h1'+'').style.paddingTop = '100px';
+    document.querySelector('h1'+'').style.paddingTop = '5%';
+    document.querySelector('h1'+'').style.cssText += 'margin: 0;' ;
 }
 
 let box1 = '';
