@@ -1,8 +1,44 @@
-import {init, modifyContainer, addElement} from "./tools.js";
+import {init, modifyContainer, addElement, generateGrid} from "./tools.js";
 
+
+
+var initHeader = () => {
+    document.querySelector('h1'+'').style.textAlign = 'center';
+    document.querySelector('h1'+'').style.paddingTop = '100px';
+}
+
+let box1 = '';
+/***
+ * sets up containers for this app
+ */
+var initContainers = () => {
+
+    let container = addElement('div','container',document.body);
+    modifyContainer(container,'flex', '', '90%', '0', '');
+
+    box1 = addElement('div', 'box', container);
+    modifyContainer(box1, '', '100%', '100%', '0', 'solid')
+
+    let box2 = addElement('div', 'box', container);
+    modifyContainer(box2, '', '100%', '100%', '0', 'solid')
+
+    container.style.cssText += 'padding-top: 5%; padding-bottom: 10%; padding-left: 10%;  padding-right: 10%;';
+    box1.style.cssText += 'flex: 1 1 15%; border: solid; ';
+    box2.style.cssText += 'flex: 1 1 85%; border: solid; ';
+
+}
+
+
+/***
+ * Fills passed container with a grid.
+ *
+ * @param container fill the given parameter with a grid.
+ */
+var fillContainerWithGrid = (container) =>{
+    container.style.cssText += generateGrid(['1fr', '1fr', '1fr'], [ '1fr', '1fr', '1fr'],[0,0])
+}
 
 init();
-let container = document.querySelector('.container'+'');
-modifyContainer(container,'flex', '100%', '100%', '0', 'solid');
-addElement('div', '', container);
-
+initContainers();
+initHeader();
+fillContainerWithGrid(box1);

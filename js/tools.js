@@ -19,7 +19,7 @@ var init = () => {
  *
  * @param container the container to be initialized
  * @param displayType set container display type to this parameter
- * @param args arg1: width, arg2: height, arg3: margin, arg4: border, arg5: padding
+ * @param args arg0: width, arg1: height, arg2: margin, arg3: border, arg4: padding
  */
 var modifyContainer = (container, displayType, ...args) => {
 
@@ -35,8 +35,8 @@ var modifyContainer = (container, displayType, ...args) => {
 /***
  * create element of type 'type', and append it as the child of 'parent'
  *
- * @param type type of element to be created
- * @param parent select the parent of the element
+ * @param type type of element to be created.
+ * @param parent select the parent-element.
  */
 var addElement = (type, class_name, parent) => {
     let element = document.createElement(type)
@@ -45,5 +45,32 @@ var addElement = (type, class_name, parent) => {
     return element;
 };
 
-export {init, modifyContainer, addElement};
+/***
+ *
+ * Create a grid using the given parameters
+ *
+ * @param rows an array representing the rows
+ * @param cols an array representing the colomns
+ * @param gap an array containing V and H gap.
+ * @returns {string} returns the CSS code for a grid using the given settings.
+ */
+var generateGrid = (rows, cols, gap) => {
+
+    let result = 'display: grid;\n';
+    result += 'grid-template-rows: '+rows+';\n';
+    result += 'grid-template-rows: '+cols+';\n';
+    result += 'gap: '+gap[0] + ' ' + gap[1]+';\n';
+
+    result += 'grid-template-areas: \n';
+    for(let r = 0; r < rows.length; r++){
+        for(let c = 0; c < cols.length; c++){
+            result += '. '
+        }
+        result += '\n';
+    }
+
+    return result;
+};
+
+export {init, modifyContainer, addElement, generateGrid};
 
