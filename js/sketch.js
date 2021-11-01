@@ -42,4 +42,4 @@ var fillContainerWithGrid = (container, rows, cols) =>{
 init();
 initContainers();
 initHeader();
-fillContainerWithGrid(box1);
+fillContainerWithGrid(box1, ['1fr', '1fr', '1fr'], ['1fr', '1fr', '1fr']);
