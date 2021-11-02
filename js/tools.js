@@ -13,8 +13,8 @@
 let init = () => {
     document.querySelectorAll('html, body'+'').forEach(node => {
     node.style.cssText =
-            '    width: 100%;\n' +
-            '    height: 100%;\n' +
+            '    width: ' + 100 + '%;\n' +
+            '    height: ' + 100 + '%;\n' +
             '    margin: 0px;\n' +
             '    padding: 0px;\n' +
             '    font-family: \'Zen Maru Gothic\', sans-serif;\n' +
@@ -28,18 +28,24 @@ let init = () => {
  *
  * @param container the container to be initialized
  * @param displayType set container display type to this parameter
- * @param args arg0: width, arg1: height, arg2: margin, arg3: border, arg4: padding
+ * @param width width of container
+ * @param height height of container
+ * @param margin margin of container
+ * @param border border of container
+ * @param padding padding of container
  */
-let modifyContainer = (container, displayType, ...args) => {
+let modifyContainer = (container, displayType, width, height, margin, border, padding) => {
 
     container.style.display = displayType;
-    container.style.width = args[0];
-    container.style.height = args[1];
-    container.style.margin = args[2];
-    container.style.border = args[3];
-    container.style.padding = args[4];
+    container.style.width = width;
+    container.style.height = height;
+    container.style.margin = margin;
+    container.style.border = border;
+    container.style.padding = padding;
 
 };
+
+
 
 /***
  * create element of type 'type', and append it as the child of 'parent'
@@ -68,7 +74,7 @@ let generateGrid = (rows, cols, gap) => {
 
 
     let result = 'display: grid;\n';
-    result += 'grid-template-rows: repeat('+rows+', 1fr);\n';
+    result += 'grid-template-rows:  repeat('+rows+', 1fr);\n';
     result += 'grid-template-columns:  repeat('+cols+', 1fr);\n';
     result += 'gap: ' + gap[0] + ' ' + gap[1] + ';\n';
 

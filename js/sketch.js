@@ -4,9 +4,14 @@ let canvas = '';
 let settings = '';
 let material = '';
 
-let size = {
+let grid_size = {
     x: 8,
     y: 8
+};
+
+let canvas_size = {
+    width: 8,
+    height: 8
 };
 
 /***
@@ -25,16 +30,22 @@ let initContainers = () => {
 
     let container = addElement('div','container',document.body);
     modifyContainer(container,'flex', '', '90%', '0', '');
+    container.style.justifyContent = 'center';
 
-    settings = addElement('div', 'box settings', container);
-    modifyContainer(settings, '', '100%', '100%', '0', 'solid');
+    let space = addElement('div', 'space', container);
+    modifyContainer(space,'flex', screen.width+'px', '100%', '0', '');
 
-    canvas = addElement('div', 'box canvas', container);
-    modifyContainer(canvas, '', '100%', '100%', '0', 'solid');
+    settings = addElement('div', 'box settings', space);
+    modifyContainer(settings,  '', '', '650px', '0', 'solid');
+
+    canvas = addElement('div', 'box canvas', space);
+    modifyContainer(canvas, '', '', '650px', '0', 'solid');
 
     container.style.cssText += 'padding-top: 5%; padding-bottom: 10%; padding-left: 10%;  padding-right: 10%;';
-    settings.style.cssText += 'flex: 1 1 15%; border: solid; ';
-    canvas.style.cssText += 'flex: 1 1 85%; border: solid; ';
+    settings.style.cssText += 'flex: 0 0 120px; border: solid; ';
+    canvas.style.cssText += 'flex: 0 0 650px; border: solid; ';
+
+    space.style.justifyContent = 'center';
 
 }
 
@@ -50,8 +61,8 @@ let fillContainerWithGrid = (container, rows, cols) =>{
 
 let fillGridWithMaterialOfType = (name, color, css) => {
 
-    for(let i = 0; i < size.x; i++){
-        for(let j = 0; j < size.y; j++){
+    for(let i = 0; i < grid_size.x; i++){
+        for(let j = 0; j < grid_size.y; j++){
             let t = createMaterial(name + ' ('+i+','+j+')');
             t.style.backgroundColor = color;
             t.style.cssText += css;
@@ -65,10 +76,10 @@ let fillGridWithMaterialOfType = (name, color, css) => {
  * set up the drawing area byt filling it up with a grid of type Material
  */
 let setUpCanvas = () => {
-    setSize(20, 20);
-    fillContainerWithGrid(canvas, size.x, size.y);
+    setSize(4, 4);
+    fillContainerWithGrid(canvas, grid_size.x, grid_size.y);
     material = createMaterial('material');
-    fillGridWithMaterialOfType('material', 'red', 'border: solid;');
+    fillGridWithMaterialOfType('material', 'red', 'border: dotted;');
     console.log(material);
 };
 
@@ -79,8 +90,8 @@ let setUpCanvas = () => {
  * @param y height
  */
 let setSize = (x, y) => {
-  size.x = x;
-  size.y = y;
+    grid_size.x = x;
+    grid_size.y = y;
 };
 
 /***
