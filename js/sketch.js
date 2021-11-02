@@ -36,15 +36,14 @@ let initContainers = () => {
     modifyContainer(space,'flex', screen.width+'px', '100%', '0', '');
 
     side = addElement('div', 'box settings', space);
-    modifyContainer(side,  '', '', '650px', '0', 'solid');
+    modifyContainer(side,  '', '', '650px', '0', '0');
 
     canvas = addElement('div', 'box canvas', space);
-    modifyContainer(canvas, '', '', '650px', '0', 'solid');
+    modifyContainer(canvas, '', '', '650px', '0', '0');
 
     container.style.cssText += 'padding-top: 5%; padding-bottom: 10%; padding-left: 10%;  padding-right: 10%;';
-    side.style.cssText += 'flex: 0 0 120px; border: solid; ';
-    canvas.style.cssText += 'flex: 0 0 650px; border: solid; ';
-
+    side.style.cssText += 'flex: 0 0 120px; border: solid 2px; ';
+    canvas.style.cssText += 'flex: 0 0 650px; border: solid 2px; ';
     space.style.justifyContent = 'center';
 
 }
@@ -75,12 +74,44 @@ let fillGridWithMaterialOfType = (name, color, css) => {
 /***
  * set up the drawing area byt filling it up with a grid of type Material
  */
-let setUpCanvas = () => {
-    setSize(4, 4);
+let initCanvas = () => {
+    setSize(70, 70);
     fillContainerWithGrid(canvas, grid_size.x, grid_size.y);
     material = createMaterial('material');
-    fillGridWithMaterialOfType('material', 'red', 'border: dotted;');
+    fillGridWithMaterialOfType('material', 'red', 'border: solid 1px;');
     console.log(material);
+};
+
+/***
+ * set up the side pane for settings
+ */
+let initSide = () => {
+    side.style.display = 'flex';
+    side.style.flexDirection = 'column';
+
+    let size = addElement('div','size',side);
+    size.style.flex = '1 1 100%'
+    size.style.border = 'solid';
+    initSize(size);
+
+    let mode = addElement('div','mode',side);
+    mode.style.flex = '1 1 70%'
+    mode.style.border = 'solid';
+
+
+};
+
+let initSize = (size) => {
+
+    let slider = addElement('input','grid_size',size);
+    slider.type = 'range';
+    slider.style.webkitAppearance = 'slider-vertical';
+    slider.style.height = '100%';
+
+    size.style.flex = '1 1 100%'
+    size.style.border = '';
+
+
 };
 
 /***
@@ -129,5 +160,6 @@ function changeColor(e){
 init();
 initContainers();
 initHeader();
-setUpCanvas();
+initCanvas();
+initSide();
 //setUpSettings();
