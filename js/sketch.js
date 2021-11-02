@@ -1,7 +1,7 @@
 import {init, modifyContainer, addElement, generateGrid} from "./tools.js";
 
 let canvas = '';
-let settings = '';
+let side = '';
 let material = '';
 
 let grid_size = {
@@ -35,14 +35,14 @@ let initContainers = () => {
     let space = addElement('div', 'space', container);
     modifyContainer(space,'flex', screen.width+'px', '100%', '0', '');
 
-    settings = addElement('div', 'box settings', space);
-    modifyContainer(settings,  '', '', '650px', '0', 'solid');
+    side = addElement('div', 'box settings', space);
+    modifyContainer(side,  '', '', '650px', '0', 'solid');
 
     canvas = addElement('div', 'box canvas', space);
     modifyContainer(canvas, '', '', '650px', '0', 'solid');
 
     container.style.cssText += 'padding-top: 5%; padding-bottom: 10%; padding-left: 10%;  padding-right: 10%;';
-    settings.style.cssText += 'flex: 0 0 120px; border: solid; ';
+    side.style.cssText += 'flex: 0 0 120px; border: solid; ';
     canvas.style.cssText += 'flex: 0 0 650px; border: solid; ';
 
     space.style.justifyContent = 'center';
@@ -102,8 +102,18 @@ let setSize = (x, y) => {
 let createMaterial = (m) => {
     let e = document.createElement('div');
     e.className = m;
+    e.onmouseenter = function (e){changeColor(e)};
     return e;
 };
+
+/***
+ *
+ * @param e
+ */
+function changeColor(e){
+    e.srcElement.style.backgroundColor= 'white';
+    console.log(e);
+}
 
 /***
  * modify material with a name m, using commands 'cssCommands'
