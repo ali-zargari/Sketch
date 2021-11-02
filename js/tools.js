@@ -1,7 +1,7 @@
 /***
  * initialize html and body components.
  */
-var init = () => {
+let init = () => {
     document.querySelectorAll('html, body'+'').forEach(node => {
     node.style.cssText =
             '    width: 100%;\n' +
@@ -21,7 +21,7 @@ var init = () => {
  * @param displayType set container display type to this parameter
  * @param args arg0: width, arg1: height, arg2: margin, arg3: border, arg4: padding
  */
-var modifyContainer = (container, displayType, ...args) => {
+let modifyContainer = (container, displayType, ...args) => {
 
     container.style.display = displayType;
     container.style.width = args[0];
@@ -38,33 +38,34 @@ var modifyContainer = (container, displayType, ...args) => {
  * @param type type of element to be created.
  * @param parent select the parent-element.
  */
-var addElement = (type, class_name, parent) => {
+let addElement = (type, class_name, parent) => {
     let element = document.createElement(type)
     if(class_name.length > 0) element.className = class_name;
     parent.appendChild(element);
     return element;
 };
 
+
 /***
  *
- * Create a grid using the given parameters
+ * Returns the CSS text for a grid layout using the parameters.
  *
  * @param rows an array representing the rows
- * @param cols an array representing the colomns
+ * @param cols an array representing the columns
  * @param gap an array containing V and H gap.
  * @returns {string} returns the CSS code for a grid using the given settings.
  */
-var generateGrid = (rows, cols, gap) => {
+let generateGridOfType = (rows, cols, gap, type) => {
+
 
     let result = 'display: grid;\n';
-    result += 'grid-template-rows: '+rows+';\n';
-    result += 'grid-template-rows: '+cols+';\n';
-    result += 'gap: '+gap[0] + ' ' + gap[1]+';\n';
+    result += 'grid-template-rows: repeat('+rows+', 1fr);\n';
+    result += 'grid-template-columns:  repeat('+cols+', 1fr);\n';
+    result += 'gap: ' + gap[0] + ' ' + gap[1] + ';\n';
 
-    result += 'grid-template-areas: \n';
-    for(let r = 0; r < rows.length; r++){
-        for(let c = 0; c < cols.length; c++){
-            result += '. '
+    for(let r = 0; r < rows; r++){
+        for(let c = 0; c < cols; c++){
+            result += type ;
         }
         result += '\n';
     }
@@ -72,5 +73,6 @@ var generateGrid = (rows, cols, gap) => {
     return result;
 };
 
-export {init, modifyContainer, addElement, generateGrid};
+
+export {init, modifyContainer, addElement, generateGridOfType};
 
