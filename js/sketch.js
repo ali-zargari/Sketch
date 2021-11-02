@@ -9,6 +9,9 @@ let size = {
     y: 8
 };
 
+/***
+ * initialize the header
+ */
 let initHeader = () => {
     document.querySelector('h1'+'').style.textAlign = 'center';
     document.querySelector('h1'+'').style.paddingTop = '5%';
@@ -43,15 +46,32 @@ let initContainers = () => {
  */
 let fillContainerWithGridOfType = (container, rows, cols, type) =>{
     container.style.cssText += generateGridOfType(rows, cols,[0,0], type);
-
 }
+
+let fillGridWithMaterialOfType = (material) => {
+
+    for(let i = 0; i < size.x; i++){
+        for(let j = 0; j < size.y; j++){
+            let t = createMaterial('('+i+','+j+')');
+            t.style.cssText += 'border: solid;';
+            canvas.appendChild(t);
+        }
+    }
+    //material = document.querySelector('.material');
+    //material.className = 'material';
+};
+
 /***
  * set up the drawing area byt filling it up with a grid, containing materials in each cell.
  */
 let setUpCanvas = () => {
     setSize(10, 10);
     fillContainerWithGridOfType(canvas, size.x, size.y, 'material');
-    console.log(canvas);
+    material = createMaterial('material');
+    //modifyMaterial(material, 'border: solid;\ngrid-area: material;\nwidth: 100%;\nheight: 100%;');
+    material.style.cssText = 'border: solid;\ngrid-area: material;\nwidth: 100%;\nheight: 100%;';
+    fillGridWithMaterialOfType(material);
+    console.log(material);
 };
 
 /***
@@ -66,7 +86,7 @@ let setSize = (x, y) => {
 };
 
 /***
- * create material with a name m
+ * create material with the classname m
  * @param m material name
  * @returns {HTMLDivElement} the resulting html fragment/element.
  */
@@ -76,11 +96,19 @@ let createMaterial = (m) => {
     return e;
 };
 
+/***
+ * modify material with a name m, using commands 'cssCommands'
+ * @param m material name
+ * @param cssCommands CSS text commands
+ */
+//let modifyMaterial = (m, cssCommands) => {
+//    m.style.cssText += cssCommands+'\n';
+//};
+
+
 
 init();
 initContainers();
 initHeader();
-material = createMaterial('material');
-material.cssText = 'grid-area: material' ;
 setUpCanvas();
 //setUpSettings();

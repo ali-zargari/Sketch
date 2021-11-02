@@ -1,4 +1,13 @@
 /***
+ *
+ * A helper file to help with JS front end development.
+ *
+ *
+ * @author Ali Zargari
+ *
+ */
+
+/***
  * initialize html and body components.
  */
 let init = () => {
@@ -65,14 +74,17 @@ let generateGridOfType = (rows, cols, gap, type) => {
 
     for(let r = 0; r < rows; r++){
         for(let c = 0; c < cols; c++){
-            result += type ;
+            result += '('+r+','+c+')';
         }
         result += '\n';
     }
-
+    console.log(result);
     return result;
 };
 
+let filledGrid = (element) => {
+
+};
 
 export {init, modifyContainer, addElement, generateGridOfType};
 
