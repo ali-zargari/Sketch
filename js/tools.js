@@ -64,25 +64,18 @@ let addElement = (type, class_name, parent) => {
  * @param gap an array containing V and H gap.
  * @returns {string} returns the CSS code for a grid using the given settings.
  */
-let generateGridOfType = (rows, cols, gap, type) => {
+let generateGrid = (rows, cols, gap) => {
 
 
     let result = 'display: grid;\n';
     result += 'grid-template-rows: repeat('+rows+', 1fr);\n';
     result += 'grid-template-columns:  repeat('+cols+', 1fr);\n';
-
     result += 'gap: ' + gap[0] + ' ' + gap[1] + ';\n';
 
-    for(let r = 0; r < rows; r++){
-        for(let c = 0; c < cols; c++){
-            result += '('+r+','+c+') ';
-        }
-        result += '\n';
-    }
     console.log(result);
     return result;
 };
 
 
-export {init, modifyContainer, addElement, generateGridOfType};
+export {init, modifyContainer, addElement, generateGrid};
 

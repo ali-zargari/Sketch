@@ -1,4 +1,4 @@
-import {init, modifyContainer, addElement, generateGridOfType} from "./tools.js";
+import {init, modifyContainer, addElement, generateGrid} from "./tools.js";
 
 let canvas = '';
 let settings = '';
@@ -44,33 +44,31 @@ let initContainers = () => {
  *
  * @param container fill the given parameter with a grid.
  */
-let fillContainerWithGridOfType = (container, rows, cols, type) =>{
-    container.style.cssText += generateGridOfType(rows, cols,[0,0], type);
+let fillContainerWithGrid = (container, rows, cols) =>{
+    container.style.cssText += generateGrid(rows, cols,[0,0]);
 }
 
-let fillGridWithMaterialOfType = (material) => {
+let fillGridWithMaterialOfType = (name, color, css) => {
 
     for(let i = 0; i < size.x; i++){
         for(let j = 0; j < size.y; j++){
-            let t = createMaterial('('+i+','+j+')');
-            t.style.cssText += 'border: solid;';
+            let t = createMaterial(name + ' ('+i+','+j+')');
+            t.style.backgroundColor = color;
+            t.style.cssText += css;
             canvas.appendChild(t);
         }
     }
-    //material = document.querySelector('.material');
-    //material.className = 'material';
+
 };
 
 /***
- * set up the drawing area byt filling it up with a grid, containing materials in each cell.
+ * set up the drawing area byt filling it up with a grid of type Material
  */
 let setUpCanvas = () => {
-    setSize(10, 10);
-    fillContainerWithGridOfType(canvas, size.x, size.y, 'material');
+    setSize(20, 20);
+    fillContainerWithGrid(canvas, size.x, size.y);
     material = createMaterial('material');
-    //modifyMaterial(material, 'border: solid;\ngrid-area: material;\nwidth: 100%;\nheight: 100%;');
-    material.style.cssText = 'border: solid;\ngrid-area: material;\nwidth: 100%;\nheight: 100%;';
-    fillGridWithMaterialOfType(material);
+    fillGridWithMaterialOfType('material', 'red', 'border: solid;');
     console.log(material);
 };
 
