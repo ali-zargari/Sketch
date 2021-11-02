@@ -70,11 +70,12 @@ let generateGridOfType = (rows, cols, gap, type) => {
     let result = 'display: grid;\n';
     result += 'grid-template-rows: repeat('+rows+', 1fr);\n';
     result += 'grid-template-columns:  repeat('+cols+', 1fr);\n';
+
     result += 'gap: ' + gap[0] + ' ' + gap[1] + ';\n';
 
     for(let r = 0; r < rows; r++){
         for(let c = 0; c < cols; c++){
-            result += '('+r+','+c+')';
+            result += '('+r+','+c+') ';
         }
         result += '\n';
     }
@@ -82,9 +83,6 @@ let generateGridOfType = (rows, cols, gap, type) => {
     return result;
 };
 
-let filledGrid = (element) => {
-
-};
 
 export {init, modifyContainer, addElement, generateGridOfType};
 
