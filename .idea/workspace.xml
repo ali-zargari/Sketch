@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd37850f-7b68-4788-a1f2-14ae5f8a4bb9" name="Changes" comment="V 1.01&#10;&#10;Fully functional resizeable grid is added.">
+    <list default="true" id="dd37850f-7b68-4788-a1f2-14ae5f8a4bb9" name="Changes" comment="V 1.01&#10;&#10;Polished buttons.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/sketch.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/sketch.js" afterDir="false" />
     </list>
@@ -54,7 +54,7 @@
       <workItem from="1635753276037" duration="1101000" />
       <workItem from="1635812084703" duration="10763000" />
       <workItem from="1635830325386" duration="12635000" />
-      <workItem from="1635875610605" duration="33495000" />
+      <workItem from="1635875610605" duration="35644000" />
     </task>
     <task id="LOCAL-00001" summary="Refreshed meta files">
       <created>1635753344675</created>
@@ -119,7 +119,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635907522158</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="V 1.01&#10;&#10;Polished buttons.">
+      <created>1635919021543</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1635919021543</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -146,6 +153,7 @@
     <MESSAGE value="V 1.00&#10;&#10;Reactive material added.&#10;&#10;Basic sketching features added" />
     <MESSAGE value="V 1.01&#10;&#10;Polished a bit more.&#10;&#10;Added a slider" />
     <MESSAGE value="V 1.01&#10;&#10;Fully functional resizeable grid is added." />
-    <option name="LAST_COMMIT_MESSAGE" value="V 1.01&#10;&#10;Fully functional resizeable grid is added." />
+    <MESSAGE value="V 1.01&#10;&#10;Polished buttons." />
+    <option name="LAST_COMMIT_MESSAGE" value="V 1.01&#10;&#10;Polished buttons." />
   </component>
 </project>

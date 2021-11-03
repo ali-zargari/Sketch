@@ -4,6 +4,7 @@ let canvas = '';
 let side = '';
 let material = '';
 let space ='';
+let RNG = false;
 
 let grid_size = {
     x: 8,
@@ -82,7 +83,7 @@ let fillGridWithMaterialOfType = (name, color, css) => {
             let t = createMaterial(name + ' ('+i+','+j+')');
             t.style.backgroundColor = color;
             t.style.cssText += css;
-            t.style.borderRadius = '7px';
+            t.style.borderRadius = '5px';
             canvas.appendChild(t);
         }
     }
@@ -180,6 +181,17 @@ let initMode = (mode) =>  {
         '\tmargin-left: 25%;' +
         '\tmargin-top: 27%;' +
         '\talign-items: center;';
+    rainbow.onclick = function (e){
+        RNG = !RNG;
+        console.log(RNG);
+        //changeColor(e);
+        if(RNG){
+            rainbow.style.backgroundColor = 'red';
+        } else {
+            rainbow.style.backgroundColor = '#ff7700'
+        }
+
+    };
 
     let reset = addElement('button','rainbow_btn',mode);
     reset.textContent = 'CLEAR';
@@ -204,6 +216,10 @@ let initMode = (mode) =>  {
         '\tmargin-left: 25%;' +
         '\tmargin-top: 27%;' +
         '\tmargin-bottom: 25%;';
+    reset.onclick = function (e){
+        removeGridFromCanvas();
+        initCanvas();
+    };
 };
 
 /***
@@ -237,8 +253,17 @@ let createMaterial = (m) => {
  * @param e
  */
 function changeColor(e){
-    e.srcElement.style.backgroundColor= '#ff7700';
-    console.log(e);
+    if (RNG === false) {
+        e.srcElement.style.backgroundColor = '#ff7700';
+    }
+
+    if (RNG === true){
+        const R = Math.floor(Math.random() * 256)
+        const G = Math.floor(Math.random() * 256)
+        const B = Math.floor(Math.random() * 256)
+        e.srcElement.style.backgroundColor = `rgb(${R}, ${G}, ${B})`;
+    }
+        //console.log(e);
 }
 
 /***
@@ -256,4 +281,3 @@ initHeader();
 initContainers();
 initCanvas();
 initSide();
-//setUpSettings();
