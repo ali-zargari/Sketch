@@ -3,6 +3,7 @@ import {init, modifyContainer, addElement, generateGrid} from "./tools.js";
 let canvas = '';
 let side = '';
 let material = '';
+let space ='';
 
 let grid_size = {
     x: 8,
@@ -32,7 +33,7 @@ let initContainers = () => {
     modifyContainer(container,'flex', '', '90%', '0', '');
     container.style.justifyContent = 'center';
 
-    let space = addElement('div', 'space', container);
+    space = addElement('div', 'space', container);
     modifyContainer(space,'flex', screen.width+'px', '100%', '0', '');
 
     side = addElement('div', 'box settings', space);
@@ -58,6 +59,11 @@ let fillContainerWithGrid = (container, rows, cols) =>{
     container.style.cssText += generateGrid(rows, cols,[0,0]);
 }
 
+let removeGridFromCanvas = () => {
+
+    console.log(canvas.querySelectorAll('.material'+'').forEach(e => e.remove()));
+}
+
 let fillGridWithMaterialOfType = (name, color, css) => {
 
     for(let i = 0; i < grid_size.x; i++){
@@ -68,14 +74,13 @@ let fillGridWithMaterialOfType = (name, color, css) => {
             canvas.appendChild(t);
         }
     }
-
 };
 
 /***
  * set up the drawing area byt filling it up with a grid of type Material
  */
 let initCanvas = () => {
-    setSize(70, 70);
+    setGridSize(grid_size.x, grid_size.y);
     fillContainerWithGrid(canvas, grid_size.x, grid_size.y);
     material = createMaterial('material');
     fillGridWithMaterialOfType('material', 'red', 'border: solid 1px;');
@@ -101,16 +106,36 @@ let initSide = () => {
 
 };
 
+
+/***
+ * Helper method for setting the size
+ *
+ *
+ * @param size grid size
+ */
 let initSize = (size) => {
 
     let slider = addElement('input','grid_size',size);
     slider.type = 'range';
     slider.style.webkitAppearance = 'slider-vertical';
     slider.style.height = '100%';
+    slider.min = '1';
+    slider.max = '30';
+    slider.value = '20';
+    slider.step = '1';
 
-    size.style.flex = '1 1 100%'
+    //slider.addEventListener('change',function(e){
+     //   setGridSize(e.target.value, e.target.value);
+     //   removeGridFromCanvas();
+     //   initCanvas();
+    //});
+    slider.addEventListener('input',function(e){
+        setGridSize(e.target.value, e.target.value);
+        removeGridFromCanvas();
+        initCanvas();
+    });
+    size.style.flex = '1 1 100%';
     size.style.border = '';
-
 
 };
 
@@ -120,7 +145,7 @@ let initSize = (size) => {
  * @param x width
  * @param y height
  */
-let setSize = (x, y) => {
+let setGridSize = (x, y) => {
     grid_size.x = x;
     grid_size.y = y;
 };
@@ -133,7 +158,9 @@ let setSize = (x, y) => {
 let createMaterial = (m) => {
     let e = document.createElement('div');
     e.className = m;
-    e.onmouseenter = function (e){changeColor(e)};
+    e.onmouseenter = function (e){
+        changeColor(e);
+    };
     return e;
 };
 
@@ -155,11 +182,10 @@ function changeColor(e){
 //    m.style.cssText += cssCommands+'\n';
 //};
 
-
-
 init();
-initContainers();
 initHeader();
+
+initContainers();
 initCanvas();
 initSide();
 //setUpSettings();
