@@ -1,2 +1,5 @@
 # Sketch
-A simple tool for drawing.
+A simple sketching app.
+
+
+Checkout @ https://ali-zargari.github.io/Sketch/
