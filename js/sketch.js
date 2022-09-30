@@ -30,7 +30,7 @@ let initHeader = () => {
  */
 let initContainers = () => {
 
-    let body = document.body.style.backgroundColor = '#006fff';
+    document.body.style.backgroundColor = '#006fff';
 
     let container = addElement('div','container',document.body);
     modifyContainer(container,'flex', '', '90%', '0', '');

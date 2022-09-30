@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd37850f-7b68-4788-a1f2-14ae5f8a4bb9" name="Changes" comment="V 1.2&#10;&#10;All app functions fully completed.">
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
+    <list default="true" id="dd37850f-7b68-4788-a1f2-14ae5f8a4bb9" name="Changes" comment="Added background">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/sketch.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/sketch.js" afterDir="false" />
     </list>
@@ -61,7 +60,7 @@
       <workItem from="1635875610605" duration="36308000" />
       <workItem from="1635983663007" duration="709000" />
       <workItem from="1635997707124" duration="746000" />
-      <workItem from="1664578837004" duration="287000" />
+      <workItem from="1664578837004" duration="362000" />
     </task>
     <task id="LOCAL-00001" summary="Refreshed meta files">
       <created>1635753344675</created>
@@ -140,7 +139,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635921108768</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Added background">
+      <created>1664579133788</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1664579133788</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -168,6 +174,7 @@
     <MESSAGE value="V 1.01&#10;&#10;Fully functional resizeable grid is added." />
     <MESSAGE value="V 1.01&#10;&#10;Polished buttons." />
     <MESSAGE value="V 1.2&#10;&#10;All app functions fully completed." />
-    <option name="LAST_COMMIT_MESSAGE" value="V 1.2&#10;&#10;All app functions fully completed." />
+    <MESSAGE value="Added background" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added background" />
   </component>
 </project>
