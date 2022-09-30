@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd37850f-7b68-4788-a1f2-14ae5f8a4bb9" name="Changes" comment="V 1.01&#10;&#10;Polished buttons.">
+    <list default="true" id="dd37850f-7b68-4788-a1f2-14ae5f8a4bb9" name="Changes" comment="V 1.2&#10;&#10;All app functions fully completed.">
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/sketch.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/sketch.js" afterDir="false" />
     </list>
@@ -12,6 +13,9 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -27,6 +31,9 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/js/sketch.js" root0="SKIP_INSPECTION" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="20JCOPbyAkpz0PAxf7g0RLDAbOS" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -34,15 +41,12 @@
     <option name="showMembers" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/aliza/OneDrive/Documents/IdeaProjects/Odin's Sketch"
+  }
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -54,7 +58,10 @@
       <workItem from="1635753276037" duration="1101000" />
       <workItem from="1635812084703" duration="10763000" />
       <workItem from="1635830325386" duration="12635000" />
-      <workItem from="1635875610605" duration="35644000" />
+      <workItem from="1635875610605" duration="36308000" />
+      <workItem from="1635983663007" duration="709000" />
+      <workItem from="1635997707124" duration="746000" />
+      <workItem from="1664578837004" duration="287000" />
     </task>
     <task id="LOCAL-00001" summary="Refreshed meta files">
       <created>1635753344675</created>
@@ -126,7 +133,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635919021543</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="V 1.2&#10;&#10;All app functions fully completed.">
+      <created>1635921108768</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1635921108768</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -142,7 +156,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Refreshed meta files" />
@@ -154,6 +167,7 @@
     <MESSAGE value="V 1.01&#10;&#10;Polished a bit more.&#10;&#10;Added a slider" />
     <MESSAGE value="V 1.01&#10;&#10;Fully functional resizeable grid is added." />
     <MESSAGE value="V 1.01&#10;&#10;Polished buttons." />
-    <option name="LAST_COMMIT_MESSAGE" value="V 1.01&#10;&#10;Polished buttons." />
+    <MESSAGE value="V 1.2&#10;&#10;All app functions fully completed." />
+    <option name="LAST_COMMIT_MESSAGE" value="V 1.2&#10;&#10;All app functions fully completed." />
   </component>
 </project>

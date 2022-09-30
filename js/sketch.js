@@ -30,6 +30,8 @@ let initHeader = () => {
  */
 let initContainers = () => {
 
+    let body = document.body.style.backgroundColor = '#006fff';
+
     let container = addElement('div','container',document.body);
     modifyContainer(container,'flex', '', '90%', '0', '');
     container.style.justifyContent = 'center';
@@ -90,7 +92,7 @@ let fillGridWithMaterialOfType = (name, color, css) => {
 };
 
 /***
- * set up the drawing area byt filling it up with a grid of type Material
+ * set up the drawing area by filling it up with a grid of type Material
  */
 let initCanvas = () => {
     setGridSize(grid_size.x, grid_size.y);
@@ -195,7 +197,8 @@ let initMode = (mode) =>  {
 
     let reset = addElement('button','rainbow_btn',mode);
     reset.textContent = 'CLEAR';
-    reset.style.cssText = '-moz-box-shadow: 0px 0px 0px 0px #000000;\n' +
+    reset.style.cssText =
+        '-moz-box-shadow: 0px 0px 0px 0px #000000;\n' +
         '\t-webkit-box-shadow: 0px 0px 0px 0px #000000;\n' +
         '\tbox-shadow: 0px 0px 0px 0px #000000;\n' +
         '\tbackground-color:#ff7700;\n' +
@@ -266,7 +269,7 @@ function changeColor(e){
         //console.log(e);
 }
 
-/***
+    /***
  * modify material with a name m, using commands 'cssCommands'
  * @param m material name
  * @param cssCommands CSS text commands
@@ -277,7 +280,7 @@ function changeColor(e){
 
 init();
 initHeader();
-
 initContainers();
 initCanvas();
 initSide();
+
